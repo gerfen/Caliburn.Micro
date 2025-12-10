@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>Setup.WinUI3</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -9,8 +9,16 @@
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
-    <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
+    <Platform Condition="'$(Platform)' == ''">x64</Platform>
+    
+    <!-- Debug: Unpackaged for fast F5 debugging -->
+    <EnableMsixTooling Condition="'$(Configuration)' == 'Debug'">false</EnableMsixTooling>
+    <WindowsPackageType Condition="'$(Configuration)' == 'Debug'">None</WindowsPackageType>
+    <WindowsAppSDKSelfContained Condition="'$(Configuration)' == 'Debug'">true</WindowsAppSDKSelfContained>
+    
+    <!-- Release: Packaged MSIX for distribution -->
+    <EnableMsixTooling Condition="'$(Configuration)' == 'Release'">true</EnableMsixTooling>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36,25 +44,33 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.250907003" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4654" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Caliburn.Micro.WinUI3\Caliburn.Micro.WinUI3.csproj" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
-  <ItemGroup>
+  <!--<ItemGroup>
     <Reference Include="Caliburn.Micro.Core">
-      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\release\net8.0-windows10.0.19041.0\Caliburn.Micro.Core.dll</HintPath>
+      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\net10.0-windows10.0.19041.0\Caliburn.Micro.Core.dll</HintPath>
     </Reference>
     <Reference Include="Caliburn.Micro.Platform.Core">
-      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\release\net8.0-windows10.0.19041.0\Caliburn.Micro.Platform.Core.dll</HintPath>
+      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\net10.0-windows10.0.19041.0\Caliburn.Micro.Platform.Core.dll</HintPath>
     </Reference>
     <Reference Include="Caliburn.Micro.WinUI3">
-      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\release\net8.0-windows10.0.19041.0\Caliburn.Micro.WinUI3.dll</HintPath>
+      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\net10.0-windows10.0.19041.0\Caliburn.Micro.WinUI3.dll</HintPath>
     </Reference>
-  </ItemGroup>
+    <Reference Include="Microsoft.Web.WebView2.Core.Projection">
+      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\net10.0-windows10.0.19041.0\Microsoft.Web.WebView2.Core.Projection.dll</HintPath>
+    </Reference>
+  </ItemGroup>-->
   
   <!--
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
