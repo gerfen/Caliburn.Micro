@@ -49,9 +49,10 @@
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
   </ItemGroup>
   
-  <ItemGroup>
+  <!-- Remove or comment out ProjectReference when using PackageReference -->
+  <!--<ItemGroup>
     <ProjectReference Include="..\..\..\src\Caliburn.Micro.WinUI3\Caliburn.Micro.WinUI3.csproj" />
-  </ItemGroup>
+  </ItemGroup>-->
   
   <ItemGroup>
     <Folder Include="Views\" />
