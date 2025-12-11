@@ -8,8 +8,8 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="8f95b858-ed4c-4571-bf22-8f7512ab539b"
-    Publisher="CN=vb2ae"
+    Name="Setup.WinUI3"
+    Publisher="CN=sanistar"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="8f95b858-ed4c-4571-bf22-8f7512ab539b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>

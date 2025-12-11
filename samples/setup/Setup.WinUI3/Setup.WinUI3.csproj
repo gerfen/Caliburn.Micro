@@ -44,6 +44,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Caliburn.Micro.WinUI3" Version="5.0.283" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.250907003" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4654" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
@@ -85,8 +86,12 @@
   <!-- Publish Properties -->
   <PropertyGroup>
     <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
-    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
+    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">False</PublishReadyToRun>
     <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
-    <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
-  </PropertyGroup>
+    <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">False</PublishTrimmed>
+    <PackageCertificateThumbprint>9739E3BDA678527EB6DDE88C8713FA2C84C812CB</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>Setup.WinUI3_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificatePassword>ratsanis</PackageCertificatePassword>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+   </PropertyGroup>
 </Project>
