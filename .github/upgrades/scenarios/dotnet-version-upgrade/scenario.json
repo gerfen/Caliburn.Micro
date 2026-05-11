@@ -1,0 +1,17 @@
+{
+  "scenarioId": "dotnet-version-upgrade",
+  "operationId": "46463eae-d56a-4188-b220-538ca5416923",
+  "description": "Upgrade .NET projects to newer .NET versions",
+  "startTime": "2026-05-11T17:48:59.3946501Z",
+  "lastUpdateTime": "2026-05-11T18:13:45.6800809Z",
+  "stage": "Assessment",
+  "properties": {
+    "currentTask": "04-platform-wpf",
+    "UpgradeTargetFramework": "net10.0",
+    "task:04-platform-wpf:startedAt": "2026-05-11T18:13:45.6800809Z",
+    "task:01-core-libs:startedAt": "2026-05-11T17:58:12.6812628Z",
+    "task:02-avalonia:startedAt": "2026-05-11T17:59:05.4269657Z",
+    "task:03-maui:startedAt": "2026-05-11T18:04:13.8989483Z"
+  },
+  "folderPath": ""
+}
