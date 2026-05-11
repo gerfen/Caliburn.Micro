@@ -40,7 +40,7 @@
     using Microsoft.UI.Xaml.Controls.Primitives;
     using Microsoft.Xaml.Interactivity;
     using TriggerBase = Microsoft.Xaml.Interactivity.IBehavior;
-    using EventTrigger = Microsoft.Xaml.Interactions.Core.EventTriggerBehavior;
+    using EventTrigger = Microsoft.Xaml.Interactivity.EventTriggerBehavior;
 #else
     using System.Windows;
     using System.Windows.Controls.Primitives;

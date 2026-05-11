@@ -33,7 +33,7 @@
     using Microsoft.UI.Xaml.Controls.Primitives;
     using Microsoft.UI.Xaml.Data;
     using Microsoft.UI.Xaml.Markup;
-    using EventTrigger = Microsoft.Xaml.Interactions.Core.EventTriggerBehavior;
+    using EventTrigger = Microsoft.Xaml.Interactivity.EventTriggerBehavior;
     using Microsoft.UI.Xaml.Shapes;
 #else
     using System.ComponentModel;
