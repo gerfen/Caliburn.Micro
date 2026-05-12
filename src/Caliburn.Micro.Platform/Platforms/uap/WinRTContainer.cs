@@ -20,6 +20,12 @@
             if (!HasHandler(typeof (IEventAggregator), null)) {
                 RegisterSingleton(typeof (IEventAggregator), null, typeof (EventAggregator));
             }
+
+#if WinUI3
+            if (!HasHandler(typeof (IWindowManager), null)) {
+                RegisterSingleton(typeof (IWindowManager), null, typeof (WindowManager));
+            }
+#endif
         }
 
         /// <summary>

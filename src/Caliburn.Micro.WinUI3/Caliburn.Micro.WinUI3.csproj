@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Remove="*.cs" />
     <Compile Include="..\Caliburn.Micro.Platform\Platforms\uap\**\*.cs" />
+    <Compile Include="WindowConductor.cs" />
+    <Compile Include="WindowManager.cs" />
   </ItemGroup>
 
   <Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
