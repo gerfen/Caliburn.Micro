@@ -18,7 +18,7 @@ namespace Features.WinUI3
     /// </summary>
     public partial class App : CaliburnApplication
     {
-        private WinRTContainer container;
+        private WinUI3Container container;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -31,8 +31,8 @@ namespace Features.WinUI3
 
         protected override void Configure()
         {
-            container = new WinRTContainer();
-            container.RegisterWinRTServices();
+            container = new WinUI3Container();
+            container.RegisterWinUIServices();
 
             container
                 .PerRequest<MenuViewModel>()

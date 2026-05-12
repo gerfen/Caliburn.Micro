@@ -45,9 +45,26 @@
 
   <ItemGroup>
     <Compile Remove="*.cs" />
-    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\**\*.cs" />
-    <Compile Include="WindowConductor.cs" />
-    <Compile Include="WindowManager.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\AppManifestHelper.cs"        Link="Platforms\WinUI3\AppManifestHelper.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\AttachedCollection.81.cs"    Link="Platforms\WinUI3\AttachedCollection.81.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\CachingFrameAdapter.cs"      Link="Platforms\WinUI3\CachingFrameAdapter.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\CaliburnApplication.cs"      Link="Platforms\WinUI3\CaliburnApplication.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\DispatcherQueueExtentions.cs" Link="Platforms\WinUI3\DispatcherQueueExtentions.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\DispatcherTaskExtensions.cs" Link="Platforms\WinUI3\DispatcherTaskExtensions.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\FrameAdapter.cs"             Link="Platforms\WinUI3\FrameAdapter.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\IAttachedObject.cs"          Link="Platforms\WinUI3\IAttachedObject.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\INavigationService.cs"       Link="Platforms\WinUI3\INavigationService.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\ISharingService.cs"          Link="Platforms\WinUI3\ISharingService.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\ISupportSharing.cs"          Link="Platforms\WinUI3\ISupportSharing.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\NavigateHelper.cs"           Link="Platforms\WinUI3\NavigateHelper.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\NavigationExtensions.cs"     Link="Platforms\WinUI3\NavigationExtensions.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\Parameter.cs"                Link="Platforms\WinUI3\Parameter.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\SharingService.cs"           Link="Platforms\WinUI3\SharingService.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\TriggerAction.cs"            Link="Platforms\WinUI3\TriggerAction.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\WindowConductor.cs"          Link="Platforms\WinUI3\WindowConductor.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\WindowManager.cs"            Link="Platforms\WinUI3\WindowManager.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\WinUI3Container.cs"          Link="Platforms\WinUI3\WinUI3Container.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\XamlMetadataProvider.cs"     Link="Platforms\WinUI3\XamlMetadataProvider.cs" />
   </ItemGroup>
 
   <Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
