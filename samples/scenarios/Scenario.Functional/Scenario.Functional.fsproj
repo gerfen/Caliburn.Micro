@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="10.1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Caliburn.Micro.Core">
       <HintPath>..\..\..\bin\Caliburn.Micro.Platform\release\net462\Caliburn.Micro.Core.dll</HintPath>
     </Reference>

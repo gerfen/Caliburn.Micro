@@ -21,9 +21,9 @@ namespace Scenario.Functional.App
             ViewLocator.AddNamespaceMapping("Scenario.Functional.Core.ViewModels", "Scenario.Functional.App.Views");
         }
 
-        protected override void OnStartup(object sender, StartupEventArgs e)
+        protected override async void OnStartup(object sender, StartupEventArgs e)
         {
-            DisplayRootViewForAsync<ShellViewModel>();
+            await DisplayRootViewForAsync<ShellViewModel>();
         }
 
         protected override IEnumerable<Assembly> SelectAssemblies()
