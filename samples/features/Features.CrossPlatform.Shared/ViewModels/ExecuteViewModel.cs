@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Caliburn.Micro;
 using Features.CrossPlatform.Views;
+using System;
+using System.Diagnostics;
 
 namespace Features.CrossPlatform.ViewModels
 {
@@ -34,7 +36,20 @@ namespace Features.CrossPlatform.ViewModels
 
         private void UnsafeBackgroundWork()
         {
-            UpdateView();
+            try
+            {
+                UpdateView();
+            }
+            catch (Exception ex)
+            {
+                //Execute.OnUIThreadAsync(() =>
+                //{
+                //    Debug.WriteLine("Exception: " + ex.Message);
+                //    return Task.CompletedTask;
+                //});
+
+                throw;
+            }
         }
 
         private Task UpdateView()

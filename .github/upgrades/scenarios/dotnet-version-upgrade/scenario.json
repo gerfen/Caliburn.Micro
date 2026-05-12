@@ -1,20 +1,12 @@
 {
   "scenarioId": "dotnet-version-upgrade",
-  "operationId": "46463eae-d56a-4188-b220-538ca5416923",
+  "operationId": "c241ded8-0fe1-441e-8778-30362348b382",
   "description": "Upgrade .NET projects to newer .NET versions",
-  "startTime": "2026-05-11T17:48:59.3946501Z",
-  "lastUpdateTime": "2026-05-11T18:26:02.0205531Z",
+  "startTime": "2026-05-11T19:11:17.315129Z",
+  "lastUpdateTime": "2026-05-11T19:11:50.4926405Z",
   "stage": "Assessment",
   "properties": {
-    "task:02-avalonia:startedAt": "2026-05-11T17:59:05.4269657Z",
-    "currentTask": "07-solution-validation",
-    "task:07-solution-validation:startedAt": "2026-05-11T18:26:02.0205531Z",
-    "task:03-maui:startedAt": "2026-05-11T18:04:13.8989483Z",
-    "UpgradeTargetFramework": "net10.0",
-    "task:04-platform-wpf:startedAt": "2026-05-11T18:13:45.6800809Z",
-    "task:01-core-libs:startedAt": "2026-05-11T17:58:12.6812628Z",
-    "task:06-xamarin-forms:startedAt": "2026-05-11T18:25:11.5827278Z",
-    "task:05-winui3:startedAt": "2026-05-11T18:17:34.1884280Z"
+    "UpgradeTargetFramework": "net10.0"
   },
   "folderPath": ""
 }

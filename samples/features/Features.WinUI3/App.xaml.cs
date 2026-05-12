@@ -6,7 +6,6 @@ using Features.CrossPlatform.Views;
 using Features.WinUI3.Views;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Windows.ApplicationModel.Activation;
 using Windows.UI.Popups;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -56,9 +55,6 @@ namespace Features.WinUI3
 
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            if (args.UWPLaunchActivatedEventArgs.PreviousExecutionState == ApplicationExecutionState.Running)
-                return;
-
             //DisplayRootView<MenuView>();
             DisplayRootNavigationView();
         }

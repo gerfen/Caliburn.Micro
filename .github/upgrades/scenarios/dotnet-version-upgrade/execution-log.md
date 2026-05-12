@@ -28,3 +28,8 @@ Upgraded Caliburn.Micro.WinUI3 to target only net10.0-windows10.0.19041.0 (dropp
 
 Caliburn.Micro.Xamarin.Forms targets netstandard2.0 — no TFM changes required. Assessed the NuGet.0003 flag for Xamarin.Forms 5.0.0.2662: the "included with framework reference" recommendation does not apply to netstandard2.0 projects; the package is the correct reference for this legacy shim. The System.Uri behavioral change is a .NET 10 runtime edge case, not a compile-time issue. Build: 0 errors, 0 warnings. No file changes needed.
 
+
+## [2026-05-11 11:29] 07-solution-validation
+
+Full solution build and test validation complete. All 4 buildable test projects pass: Core.Tests (67 passed, 5 pre-existing skips), Avalonia.Tests (39 passed), Maui.Tests (39 passed), Platform.Tests (35 passed). Total: 180 passed, 0 failed, 5 pre-existing skips. The only build error (uap10.0.19041 missing reference assemblies) is a pre-existing environment constraint confirmed present on master before the upgrade — requires Windows SDK/UWP targeting pack. All warnings are pre-existing MAUI deprecation notices and one NU5048 packaging advisory. All changes committed to upgrade-to-NET10 branch.
+

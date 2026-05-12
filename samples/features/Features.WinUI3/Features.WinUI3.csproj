@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>Features.WinUI3</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -9,6 +9,7 @@
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
+    <WindowsPackageType>None</WindowsPackageType>
     <DefineConstants>WinUI3</DefineConstants>
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
@@ -37,19 +38,19 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4654" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="3.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Caliburn.Micro.Core">
-      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\release\net8.0-windows10.0.19041.0\Caliburn.Micro.Core.dll</HintPath>
+      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\release\net10.0-windows10.0.19041.0\Caliburn.Micro.Core.dll</HintPath>
     </Reference>
     <Reference Include="Caliburn.Micro.Platform.Core">
-      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\release\net8.0-windows10.0.19041.0\Caliburn.Micro.Platform.Core.dll</HintPath>
+      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\release\net10.0-windows10.0.19041.0\Caliburn.Micro.Platform.Core.dll</HintPath>
     </Reference>
     <Reference Include="Caliburn.Micro.WinUI3">
-      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\release\net8.0-windows10.0.19041.0\Caliburn.Micro.WinUI3.dll</HintPath>
+      <HintPath>..\..\..\bin\Caliburn.Micro.WinUI3\release\net10.0-windows10.0.19041.0\Caliburn.Micro.WinUI3.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="..\Features.CrossPlatform.Shared\Features.CrossPlatform.Shared.projitems" Label="Shared" />

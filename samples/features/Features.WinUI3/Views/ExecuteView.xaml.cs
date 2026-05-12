@@ -35,5 +35,10 @@ namespace Features.CrossPlatform.Views
         {
             Output.Text = "View Updated";
         }
+
+        public void ShowError(string message)
+        {
+            Output.Text = $"Error: {message}";
+        }
     }
 }

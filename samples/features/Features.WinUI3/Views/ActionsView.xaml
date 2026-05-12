@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:cal="using:Caliburn.Micro"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
-    xmlns:ii="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:ii="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
