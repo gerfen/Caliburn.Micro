@@ -1,24 +1,24 @@
 ﻿namespace Caliburn.Micro {
     using System;
-#if WinUI3
-    using Microsoft.UI.Xaml.Controls;
-#else
-    using Windows.UI.Xaml.Controls;
-#endif
+using Microsoft.UI.Xaml.Controls;
 
     /// <summary>
-    /// A custom IoC container which integrates with WinRT and properly registers all Caliburn.Micro services.
+    /// A custom IoC container which integrates with WinUI 3 (Windows App SDK) and properly registers all Caliburn.Micro services.
     /// </summary>
-    public class WinRTContainer : SimpleContainer {
+    public class WinUI3Container : SimpleContainer {
         /// <summary>
-        /// Registers the Caliburn.Micro WinRT services with the container.
+        /// Registers the Caliburn.Micro WinUI 3 services with the container.
         /// </summary>
-        public void RegisterWinRTServices() {
+        public void RegisterWinUIServices() {
             RegisterInstance(typeof (SimpleContainer), null, this);
-            RegisterInstance(typeof (WinRTContainer), null, this);
+            RegisterInstance(typeof (WinUI3Container), null, this);
 
             if (!HasHandler(typeof (IEventAggregator), null)) {
                 RegisterSingleton(typeof (IEventAggregator), null, typeof (EventAggregator));
+            }
+
+            if (!HasHandler(typeof (IWindowManager), null)) {
+                RegisterSingleton(typeof (IWindowManager), null, typeof (WindowManager));
             }
         }
 
@@ -34,13 +34,9 @@
 
             if (rootFrame == null)
                 throw new ArgumentNullException("rootFrame");
-#if WINDOWS_UWP
-            var frameAdapter = cacheViewModels ? (INavigationService)
-                new CachingFrameAdapter(rootFrame, treatViewAsLoaded) : 
-                new FrameAdapter(rootFrame, treatViewAsLoaded);
-#else
-            var frameAdapter = new FrameAdapter(rootFrame, treatViewAsLoaded);
-#endif
+var frameAdapter = cacheViewModels ? (INavigationService)
+    new CachingFrameAdapter(rootFrame, treatViewAsLoaded) :
+    new FrameAdapter(rootFrame, treatViewAsLoaded);
 
             RegisterInstance(typeof (INavigationService), null, frameAdapter);
 
@@ -61,28 +57,5 @@
             return sharingService;
         }
 
-#if !WINDOWS_UWP && !WinUI3
-        /// <summary>
-        /// Registers the Caliburn.Micro settings service with the container.
-        /// </summary>
-
-        public ISettingsService RegisterSettingsService() {
-            if (HasHandler(typeof (ISettingsService), null))
-                return this.GetInstance<ISettingsService>(null);
-
-            if (!HasHandler(typeof (ISettingsWindowManager), null))
-#if WINDOWS_UWP
-                RegisterInstance(typeof (ISettingsWindowManager), null, new SettingsWindowManager());
-#else
-                RegisterInstance(typeof(ISettingsWindowManager), null, new CallistoSettingsWindowManager());
-#endif
-
-            var settingsService =
-                new SettingsService((ISettingsWindowManager) GetInstance(typeof (ISettingsWindowManager), null));
-            RegisterInstance(typeof (ISettingsService), null, settingsService);
-
-            return settingsService;
-        }
-#endif
     }
 }

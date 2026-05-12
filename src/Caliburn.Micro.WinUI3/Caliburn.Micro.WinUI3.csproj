@@ -45,7 +45,7 @@
 
   <ItemGroup>
     <Compile Remove="*.cs" />
-    <Compile Include="..\Caliburn.Micro.Platform\Platforms\uap\**\*.cs" />
+    <Compile Include="..\Caliburn.Micro.Platform\Platforms\WinUI3\**\*.cs" />
     <Compile Include="WindowConductor.cs" />
     <Compile Include="WindowManager.cs" />
   </ItemGroup>
