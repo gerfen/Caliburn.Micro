@@ -1,4 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+
+  <!-- MSBuild.Sdk.Extras 3.0.44 has a bug with net10.0 TFMs: its char-based version check
+       ($(_SdkShortFrameworkVersion[0]) >= 5) fails for '10.0' because '1' < '5'.
+       Pre-setting TargetFrameworkIdentifier here prevents Extras from incorrectly
+       overwriting the value that Microsoft.NET.Sdk already set correctly. -->
+  <PropertyGroup Condition="$(TargetFramework.StartsWith('net10.0-'))">
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+  </PropertyGroup>
 
   <PropertyGroup>
     <TargetFrameworks>net462;uap10.0.19041;net10.0-android;net10.0-ios;net10.0-windows</TargetFrameworks>
