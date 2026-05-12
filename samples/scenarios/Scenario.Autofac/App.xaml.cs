@@ -24,9 +24,9 @@ namespace Scenario.Autofac
             container = builder.Build();
         }
 
-        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        protected override async void OnLaunched(LaunchActivatedEventArgs args)
         {
-            DisplayRootViewForAsync<ShellViewModel>();
+            await DisplayRootViewForAsync<ShellViewModel>();
         }
 
         protected override object GetInstance(Type service, string key)
