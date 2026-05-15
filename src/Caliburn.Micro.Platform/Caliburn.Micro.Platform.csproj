@@ -94,8 +94,4 @@
     <PackageReference Update="Nerdbank.GitVersioning" Version="3.7.112" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Platforms\WinUI3\" />
-  </ItemGroup>
-
 </Project>
